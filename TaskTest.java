@@ -16,7 +16,24 @@ public class TaskTest
     @Test
     public void createInstanceOfTask()
     {
-        Task emptyTask = new Tas();
+        Task emptyTask = new Task();
+        assertTrue(emptyTask instanceof Task);
+        assertTrue(emptyTask instanceof Object);
+    }
+    
+    @Test
+    public void readDescriptionProperty()
+    {
+        Task emptyTask = new Task();
+        assertEquals("", emptyTask.getDescription());
+    }
+    
+    @Test
+    public void writeDescriptionProperty()
+    {
+        Task task = new Task();
+        task.setDescription("This is a task");
+        assertEquals("This is a task", task.getDescription());
     }
 
 }
