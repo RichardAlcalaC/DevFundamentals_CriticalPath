@@ -85,5 +85,14 @@ public class TaskTest
         assertEquals(2, task.getTimeToComplete());
         
     }
+    
+    @Test
+    public void createTaskWithNameAndTimeToComplete()
+    {
+        Task task = new Task("t1",3);
+        assertEquals("t1", task.getName());
+        assertEquals(3, task.getTimeToComplete());        
+    }
+    
 
 }

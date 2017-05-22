@@ -8,8 +8,8 @@
 public class Task
 {
     //1 atributes
-    private String description;
     private String name;
+    private String description;
     private String owner;
     private int timeToComplete;
     
@@ -21,6 +21,12 @@ public class Task
         name = "";
         owner = "";
         timeToComplete = 0;
+    }
+    
+    public Task(String name, int time)
+    {
+        this.name = name;
+        this.timeToComplete = time;
     }
     
     //3 Getteers and Setters
