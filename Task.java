@@ -13,6 +13,7 @@ public class Task
     private String owner;
     private int timeToComplete;
     
+    Task preRequisite;
     
     //2 Constructor
     public Task()
@@ -69,4 +70,24 @@ public class Task
     {
         this.timeToComplete = timeToComplete;
     }
+    
+    public void dependsOn(Task otherTask)
+    {
+        preRequisite = otherTask;
+    }
+    public Task getPreRequisite()
+    {
+        return preRequisite;
+    }
+    
+    public int calculateTimeToComplete()
+    {
+        int time = getTimeToComplete();
+        if(getPreRequisite() != null)
+        {
+            time = time + getPreRequisite().getTimeToComplete();
+        }
+        return time;
+    }
+    
 }

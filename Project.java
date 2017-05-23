@@ -8,7 +8,7 @@ import java.util.Vector;
 public class Project
 {
     private String name = "";
-    private Vector tasks;
+    private Vector <Task> tasks;
     
     public Project()
     {
@@ -30,15 +30,21 @@ public class Project
     public int calculateTimeToDelivery()
     {
         int maxTimeToComplete = 0;
-        for(Object element: tasks)
-        {
-            Task task = (Task) element;
-            if(task.getTimeToComplete() > maxTimeToComplete)
+        for(Task task: tasks){
+            //Task task = (Task) element;
+            int time = task.calculateTimeToComplete();
+            
+            if(time > maxTimeToComplete)
             {
-                maxTimeToComplete = task.getTimeToComplete();
+                maxTimeToComplete = time;
             }
         }
         return maxTimeToComplete;
+    }
+    
+    public Vector <Task> getTasks()
+    {
+        return tasks;
     }
 
 }
